@@ -4,37 +4,53 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
-
-<h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>pedidos</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Quantidade)
-        </dt>
+    <h3 align="center"> Apagar pedido</h3>
+    <img hspace="420" src="https://rlv.zcache.com/vintage_cake_emblem_logo_bakery_ii_sticker-rd490b5d7ed1b4b238e91a3a9f108d516_v9waf_8byvr_324.jpg" width="300" height="300" />
+</div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Quantidade)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Produto)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Produto)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+<h4 align="center">Deseja realmente excluir o pedido?</h4>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <table class="table">
+                <tbody>
+                    <tr>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Nome)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Quantidade)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Produto)
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(model => model.Nome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Quantidade)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Produto)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-    }
+    </div>
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color" align="center">
+        <input type="submit" value="Apagar Pedido" class="btn btn-default" />
+
+    </div>
+}
 </div>

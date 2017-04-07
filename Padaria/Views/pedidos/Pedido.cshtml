@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "PedidoConcluido";
+
+}
+
+<div class="container" align="center">
+    <div>
+        <h3 class="alert-success" align="center"> Pedido realizado com sucesso!</h3>
+        <img hspace="430" src="https://rlv.zcache.com/vintage_cake_emblem_logo_bakery_ii_sticker-rd490b5d7ed1b4b238e91a3a9f108d516_v9waf_8byvr_324.jpg" width="250" height="250" />
+    </div>
+</div>
+
+<div class="jumbotron" align="center">
+
+    <div class="form-inline">
+        <b>Nome:</b> @ViewData["nome"]
+    </div>
+
+
+    <div class="form-inline">
+        <b>Quantidade:</b> @ViewData["quantidade"]
+    </div>
+
+    <div class="form-inline">
+        <b>Produto:</b> @ViewData["produto"]
+    </div>
+
+    <div class="form-inline">
+        <b>Valor:</b> @ViewData["valor"]
+    </div>
+
+    <a @Html.ActionLink("Voltar", "Create", "pedidos", null, new { @class = "btn btn-default" }) </a>
+</div>
+

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Padaria.Models.pedidos>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div>
+    <h2 align="center"> Lista de Encomendas</h2>
+    <img hspace="430" src="https://rlv.zcache.com/vintage_cake_emblem_logo_bakery_ii_sticker-rd490b5d7ed1b4b238e91a3a9f108d516_v9waf_8byvr_324.jpg" width="300" height="300" />
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Nome)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Quantidade)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Produto)
+                        </th>
+                        <th>
+                            Preço
+                        </th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Nome)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Quantidade)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Produto)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Delete", "Delete", new { id = item.Nome })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
